@@ -1,0 +1,36 @@
+{
+  "name": "react-express-socketio-chatroom",
+  "version": "1.0.0",
+  "description": "A realtime online chatroom that every one can join and talk! Build with react as front-end, express and socket.io as server side.",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "client": "cd client && npm run start",
+    "server": "nodemon server.js",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start:prod": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewlin618/react-express-socketio-chatroom.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "socket.io"
+  ],
+  "author": "Andrew Lin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewlin618/react-express-socketio-chatroom/issues"
+  },
+  "homepage": "https://github.com/andrewlin618/react-express-socketio-chatroom#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
