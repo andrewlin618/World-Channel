@@ -9,6 +9,14 @@ const io = socket(server);
 
 var connectionCounter = 0;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+
 io.on("connection", socket => {
     console.log('=> New user joined the room!');
 
@@ -39,4 +47,6 @@ io.on("connection", socket => {
     })
 })
 
-server.listen(5000, () => console.log("Server is running on port 8000"));
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => console.log("Server is running on port 8000"));
