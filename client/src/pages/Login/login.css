@@ -1,0 +1,84 @@
+.block {
+  height: 280px;
+}
+
+.myInput {
+  font-size: 3rem;
+  width: 90%;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  border: 5px solid white;
+  display: block;
+  margin: auto;
+}
+
+.myLabel {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+}
+
+.myAvatars {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.myAvatar {
+  flex: 1 0 21%; /* explanation below */
+  opacity: 0.4;
+  height: 6rem;
+  transition: ease 0.2s;
+}
+
+.myAvatar:target {
+  opacity: 1;
+  transition: ease 0.2s;
+  background-color: tomato;
+}
+
+.myAvatar:hover {
+  opacity: 1;
+  transition: ease 0.2s;
+  background-color: tomato;
+}
+
+.mySubmit {
+  display: block;
+  margin: auto;
+  font-size: 30px;
+  background-color: transparent;
+  width: 300px;
+  color: white;
+}
+
+.myArrow {
+  color: white;
+  font-size: 1rem;
+  animation: flashing 1.5s infinite;
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .block {
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .block {
+    height: 150px;
+  }
+}

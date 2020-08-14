@@ -1,0 +1,22 @@
+[
+    {
+        "name" : "Andrew",
+        "color" : "rgb(255, 225, 143)",
+        "password":"123456"
+    },
+    {
+        "name" : "Mercia",
+        "color" : "rgb(216, 255, 143)",
+        "password":"123456"
+    },
+    {
+        "name" : "Ryder",
+        "color" : "rgb(143, 205, 255)",
+        "password":"123456"
+    },
+    {
+        "name" : "Shayna",
+        "color" : "rgb(178, 143, 255)",
+        "password":"123456"
+    }
+]

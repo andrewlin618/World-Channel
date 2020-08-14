@@ -1,0 +1,98 @@
+.container {
+  background-color: white;
+  border: 0px;
+  border-radius: 30px;
+  /* height: 80vh; */
+  padding: 10px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.messages {
+  margin: 0;
+  padding: 20px;
+  height: 75vh;
+  overflow: auto;
+}
+
+.notification {
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  margin: 10px 150px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.lineWrapperOut {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0px;
+}
+
+.lineWrapperIn {
+  margin: 10px 0px;
+  display: flex;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+}
+
+.messageOut {
+  background-color: rgb(216, 255, 185);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 0 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.messageIn {
+  background-color: rgba(220, 220, 220);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 0 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.sender {
+  border: 0px;
+  border-radius: 30px;
+  margin: auto;
+  padding: 10px;
+  background-color: rgba(240, 240, 240);
+  position: relative;
+  display: flex;
+}
+
+textarea {
+  border: none;
+  /* overflow: auto; */
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  margin: 5px;
+  width: 90%;
+  font-size: 1.2rem;
+  background-color: transparent;
+  resize: none;
+}
+
+.send {
+  border: 0px;
+  background-color: transparent;
+  color: rgba(140, 200, 140);
+  font-weight: bold;
+}
+
+input:focus,
+input:active,
+textarea:focus,
+select:focus {
+  outline: none;
+}
