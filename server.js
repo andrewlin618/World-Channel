@@ -28,7 +28,7 @@ io.on("connection", socket => {
             avatar: user.avatar,
             room: " World Channel"
         }
-        console.log(newUser);        socket.name = newUser.name;
+        console.log(newUser); socket.name = newUser.name;
         socket.emit("join", newUser)
         socket.broadcast.emit("notification", `${newUser.name} joined the room...`);
         io.emit("notification", `${connectionCounter} ${connectionCounter < 2 ? 'user' : 'users'} online`);
@@ -46,6 +46,10 @@ io.on("connection", socket => {
         }
     })
 })
+
+app.use("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "/client/public/index.html"))
+);
 
 const PORT = process.env.PORT || 5000;
 
