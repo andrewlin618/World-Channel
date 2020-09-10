@@ -20,8 +20,8 @@ const MessageOut = ({ message }) => {
   return (
     <div className='lineWrapperOut'>
       <p style={{ color: "rgba(0,0,0,0.5)" }}>me</p>
-      <p className='messageOut'>{message.body}</p>
-      <img src={require(`../../../data/avatars/${message.avatar}.png`)} className='avatar' alt='avatar' />
+      {message && <p className='messageOut'>{message.body}</p>}
+      {message && <img src={require(`../../../data/avatars/${message.avatar}.png`)} className='avatar' alt='avatar' />}
     </div>
   )
 }
