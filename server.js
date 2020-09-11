@@ -2,6 +2,8 @@ const express = require("express");
 const http = require("http");
 const app = express();
 
+// const SocketManager = require('./SocketManager');
+
 const server = http.createServer(app);
 const socket = require("socket.io");
 
@@ -16,6 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
+
+// io.on("connection", SocketManager);
 
 io.on("connection", socket => {
     console.log('=> New user joined the room!');
@@ -48,7 +52,7 @@ io.on("connection", socket => {
 })
 
 app.use("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "/client/public/index.html"))
+    res.sendFile(path.join(__dirname, "/client/build/index.html"))
 );
 
 const PORT = process.env.PORT || 3001;
