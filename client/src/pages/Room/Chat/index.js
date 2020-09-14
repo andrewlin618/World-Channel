@@ -8,6 +8,9 @@ import Sender from './Sender';
 
 import './chat.css'
 
+const ENDPOINT = "http://worldchannel.herokuapp.com/";
+// const ENDPOINT = "http://localhost:3001/";
+
 const Chat = () => {
   const auth = useAuth();
   const history = useHistory();
@@ -21,7 +24,7 @@ const Chat = () => {
     if (!auth.user.username) {
       return history.push('/')
     }
-    socketRef.current = io.connect('https://worldchannel.herokuapp.com/');
+    socketRef.current = io.connect(ENDPOINT);
     // document.title = `Welcome, ${auth.user.username}`;
     socketRef.current.emit('join', auth.user);
   }, [auth, history]);
