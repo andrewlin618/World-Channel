@@ -23,8 +23,6 @@ if (process.env.NODE_ENV === "production") {
 // io.on("connection", SocketManager);
 
 io.on("connection", socket => {
-    console.log('=> New user joined the room!');
-
     socket.on("join", user => {
         connectionCounter++;
         const newUser = {
@@ -33,7 +31,9 @@ io.on("connection", socket => {
             avatar: user.avatar,
             room: " World Channel"
         }
-        console.log(newUser); socket.name = newUser.name;
+        socket.name = newUser.name;
+        console.log(`=> ${socket.name} joined the room...`); 
+        console.log(newUser); 
         socket.emit("join", newUser)
         socket.broadcast.emit("notification", `${newUser.name} joined the room...`);
         io.emit("notification", `${connectionCounter} ${connectionCounter < 2 ? 'user' : 'users'} online`);
@@ -44,16 +44,18 @@ io.on("connection", socket => {
         socket.broadcast.emit("message", messageObject)
     })
 
-    socket.on("disconnecting", () => {
+    socket.on("disconnect", () => {
         if (socket.name) {
             connectionCounter--;
-            io.emit("notification", `${socket.name} left the room...`)
+            socket.broadcast.emit("notification", `${socket.name} left the room...`);
+            io.emit("notification", `${connectionCounter} ${connectionCounter < 2 ? 'user' : 'users'} online`);
         }
+        console.log(`=> ${socket.name} left the room...`)
     })
 })
 
 app.use("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "/client/public/index.html"))
+    res.sendFile(path.join(__dirname, "/client/build/index.html"))
 );
 
 const PORT = process.env.PORT || 3001;

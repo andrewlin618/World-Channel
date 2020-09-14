@@ -27,6 +27,11 @@ const Chat = () => {
     socketRef.current = io.connect(ENDPOINT);
     // document.title = `Welcome, ${auth.user.username}`;
     socketRef.current.emit('join', auth.user);
+
+    return () => {
+      console.log('Disconnecting socket...');
+      if (io) io.disconnect()
+    }
   }, [auth, history]);
 
   useEffect(() => {
