@@ -4,6 +4,7 @@ import { ProvideAuth } from "./utils/use-auth";
 
 import Login from './pages/Login'
 import Room from './pages/Room'
+import Error from './pages/Error'
 
 import './App.css'
 
@@ -14,6 +15,7 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path="/room" component={Room} />
+            <Route exact path="/error" component={Error} />
             <Route component={Login} />
             {/* <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/admin" component={Admin} />

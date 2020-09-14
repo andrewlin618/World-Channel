@@ -8,8 +8,10 @@ import Sender from './Sender';
 
 import './chat.css'
 
-// const ENDPOINT = "http://worldchannel.herokuapp.com/";
-// const ENDPOINT = "http://localhost:3001/";
+const socketURL =
+  process.env.NODE_ENV === 'production'
+    ? window.location.hostname
+    : 'http://localhost:3001';
 
 const Chat = () => {
   const auth = useAuth();
@@ -24,9 +26,16 @@ const Chat = () => {
     if (!auth.user.username) {
       return history.push('/')
     }
-    socketRef.current = io.connect("");
-    // document.title = `Welcome, ${auth.user.username}`;
+    try {
+      socketRef.current = io.connect(socketURL, {secure: true});
+    }
+    catch(err){
+        console.log(err);
+        history.push('/error');
+    }
     socketRef.current.emit('join', auth.user);
+    // document.title = `Welcome, ${auth.user.username}`;
+
 
     return () => {
       console.log('Disconnecting socket...');
@@ -74,10 +83,11 @@ const Chat = () => {
   function sendMessage() {
     const messageObject = {
       body: input,
-      id: user.id,
-      name: user.name,
-      avatar: user.avatar
+      id: user.id || '',
+      name: user.name || '',
+      avatar: user.avatar || 'me' 
     }
+    console.log(messageObject);
     socketRef.current.emit("send message", messageObject)
     setMessages([...messages, messageObject]);
     setInput('');
