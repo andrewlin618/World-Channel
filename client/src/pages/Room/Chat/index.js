@@ -8,7 +8,7 @@ import Sender from './Sender';
 
 import './chat.css'
 
-const socketURL = 'http://worldchannel.herokuapp.com/';
+const socketURL = 'https://worldchannel.herokuapp.com/';
 
 const Chat = () => {
   const auth = useAuth();
