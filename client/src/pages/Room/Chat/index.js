@@ -8,10 +8,7 @@ import Sender from './Sender';
 
 import './chat.css'
 
-const socketURL =
-  process.env.NODE_ENV === 'production'
-    ? window.location.hostname
-    : 'http://localhost:3001';
+const socketURL = 'http://worldchannel.herokuapp.com/';
 
 const Chat = () => {
   const auth = useAuth();
@@ -27,7 +24,7 @@ const Chat = () => {
       return history.push('/')
     }
     try {
-      socketRef.current = io.connect(socketURL, {secure: true});
+      socketRef.current = io.connect(socketURL);
     }
     catch(err){
         console.log(err);
