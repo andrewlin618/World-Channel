@@ -17,7 +17,7 @@ const Pool = ({ users }) => {
 const Card = ({ user }) => {
     return (
         <div className="status">
-            <img src={require("../../../data/avatars/" + user.avatar + ".png")} className='avatar' alt="avatar" />
+            <img src={require("../../../data/avatars/" + user.avatar + ".png")} className='avatar' alt="avatar" title={user.name}/>
         </div>
     )
 }

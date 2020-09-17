@@ -38,11 +38,11 @@ const LoginWindow = () => {
     }
 
     function handleChange(e) {
-        console.log(e.target.value)
-        if (e.target.value !== '') {
+        let input = e.target.value.toUpperCase();
+        if (input !== '') {
             setErrors({ name: '', avatar: errors.avatar })
         }
-        setName(e.target.value.toUpperCase());
+        setName(input.length > 15 ? input.slice(0, 15) : input);
     }
 
     useEffect(() => {
