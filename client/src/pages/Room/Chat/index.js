@@ -9,7 +9,7 @@ import Sender from './Sender';
 
 import './chat.css'
 
-// const socketURL = 'https://worldchannel.herokuapp.com/';
+const socketURL = 'worldchannel.herokuapp.com/';
 // const socketURL = 'http://localhost:3001/';
 // const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
 const Chat = () => {
@@ -26,7 +26,7 @@ const Chat = () => {
     if (!auth.user.username) {
       return history.push('/')
     }
-    socketRef.current = io.connect();
+    socketRef.current = io.connect(socketURL);
     socketRef.current.emit('join', auth.user);
     document.title = `Welcome, ${auth.user.username}`;
 
