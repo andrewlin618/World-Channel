@@ -9,7 +9,6 @@ const socket = require("socket.io");
 
 const io = socket(server);
 
-var connectionCounter = 0;
 var onlineUsers = {};
 
 app.use(express.json());
@@ -26,7 +25,6 @@ if (process.env.NODE_ENV === "production") {
 
 io.on("connection", socket => {
     socket.on("join", user => {
-        connectionCounter++;
         const newUser = {
             name: user.username,
             id: socket.id,
@@ -49,7 +47,6 @@ io.on("connection", socket => {
 
     socket.on("disconnect", () => {
         if (socket.name) {
-            connectionCounter--;
             delete onlineUsers[socket.id];
             io.emit("online users",Object.values(onlineUsers)); 
             socket.broadcast.emit("notification", `${socket.name} left the room...`);

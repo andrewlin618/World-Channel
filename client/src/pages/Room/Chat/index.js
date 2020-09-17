@@ -27,7 +27,7 @@ const Chat = () => {
     if (!auth.user.username) {
       return history.push('/')
     }
-    socketRef.current = io.connect(socketURL);
+    socketRef.current = io(socketURL);
     socketRef.current.emit('join', auth.user);
     document.title = `Welcome, ${auth.user.username}`;
 
