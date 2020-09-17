@@ -7,11 +7,12 @@ import Pool from './Pool';
 import Messages from './Messages';
 import Sender from './Sender';
 
+// require('dotenv').config();
 import './chat.css'
 
-const socketURL = 'worldchannel.herokuapp.com/';
-// const socketURL = 'http://localhost:3001/';
+const socketURL = '/';
 // const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
+
 const Chat = () => {
   const auth = useAuth();
   const history = useHistory();
