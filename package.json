@@ -28,6 +28,7 @@
   "homepage": "https://github.com/andrewlin618/react-express-socketio-chatroom#readme",
   "dependencies": {
     "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },

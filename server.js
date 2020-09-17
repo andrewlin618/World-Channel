@@ -2,8 +2,7 @@ const express = require("express");
 const http = require("http");
 const app = express();
 const path = require("path");
-
-// const SocketManager = require('./SocketManager');
+const cors = require('cors');
 
 const server = http.createServer(app);
 const socket = require("socket.io");
@@ -15,6 +14,8 @@ var onlineUsers = {};
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {

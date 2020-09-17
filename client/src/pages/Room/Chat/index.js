@@ -10,7 +10,7 @@ import Sender from './Sender';
 // require('dotenv').config();
 import './chat.css'
 
-const socketURL = '/';
+const socketURL = 'https://worldchannel.herokuapp.com/';
 // const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
 
 const Chat = () => {
