@@ -42,7 +42,7 @@ const LoginWindow = () => {
         if (e.target.value !== '') {
             setErrors({ name: '', avatar: errors.avatar })
         }
-        setName(e.target.value);
+        setName(e.target.value.toUpperCase());
     }
 
     useEffect(() => {

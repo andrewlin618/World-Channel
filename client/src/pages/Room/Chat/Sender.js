@@ -4,11 +4,11 @@ import TextareaAutosize from 'react-textarea-autosize';
 const Sender = ({ handleSubmit, handleChange, handleKeyPress, message}) => {
     function handleFocus(event) {
         event.preventDefault();
-        document.getElementById('sender').style.backgroundColor = "rgba(0,0,0,0.16)"
+        document.getElementById('sender').style.backgroundColor = "rgba(256,256,256,0.7)"
     }
     function handleFocusOut(event) {
         event.preventDefault();
-        document.getElementById('sender').style.backgroundColor = "rgba(0,0,0,0.1)"
+        document.getElementById('sender').style.backgroundColor = "rgba(256,256,256,0.4)"
     }
 
     return (

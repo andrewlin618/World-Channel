@@ -3,22 +3,19 @@ import io from 'socket.io-client';
 import { useAuth } from '../../../utils/use-auth';
 import { useHistory } from 'react-router-dom'
 
-import Pool from './Pool';
 import Messages from './Messages';
 import Sender from './Sender';
 
 import './chat.css'
 
 // const socketURL = 'https://worldchannel.herokuapp.com/';
-// const socketURL = 'http://localhost:3001/';
-// const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
+
 const Chat = () => {
   const auth = useAuth();
   const history = useHistory();
   const [user, setUser] = useState({});
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [onlineUsers, setOnlineUsers] = useState([]);
 
   const socketRef = useRef();
 
@@ -26,7 +23,15 @@ const Chat = () => {
     if (!auth.user.username) {
       return history.push('/')
     }
-    socketRef.current = io.connect();
+    try {
+      socketRef.current = io.connect("http://localhost:3001", {
+        reconnect: false
+      });
+    }
+    catch (err) {
+      console.log("有错误")
+    }
+
     socketRef.current.emit('join', auth.user);
     document.title = `Welcome, ${auth.user.username}`;
 
@@ -59,11 +64,6 @@ const Chat = () => {
 
     socketRef.current.on("message", messages => {
       receiveMessage(messages);
-    });
-
-    socketRef.current.on("online users", onlineUsers => {
-      console.log(onlineUsers);
-      setOnlineUsers(onlineUsers);
     })
   })
 
@@ -83,8 +83,9 @@ const Chat = () => {
       body: input,
       id: user.id || '',
       name: user.name || '',
-      avatar: user.avatar || 'me' 
+      avatar: user.avatar || 'me'
     }
+    console.log(messageObject);
     socketRef.current.emit("send message", messageObject)
     setMessages([...messages, messageObject]);
     setInput('');
@@ -107,7 +108,6 @@ const Chat = () => {
   return (
     <>
       <Container>
-        <Pool users={onlineUsers}/>
         <Messages user={user} messages={messages} />
         <Sender handleSubmit={handleSubmit} handleChange={handleChange} handleKeyPress={handleKeyPress} message={input} />
       </Container>
