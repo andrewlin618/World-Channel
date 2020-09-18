@@ -11,7 +11,7 @@ import Sender from './Sender';
 import './chat.css'
 
 // const socketURL = 'http://localhost:3001/';
-const socketURL = 'https://worldchannel.herokuapp.com/';
+const socketURL = 'http://worldchannel.herokuapp.com/';
 // const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
 
 const Chat = () => {
