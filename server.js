@@ -18,6 +18,14 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
+app.get('/api', (req, res) => {
+    res.send(req.body);
+})
+
+app.use("*", (req, res) =>
+    res.sendFile(path.join(__dirname, "/client/build/index.html"))
+);
+
 // io.on("connection", SocketManager);
 
 io.on("connection", socket => {
@@ -53,14 +61,6 @@ io.on("connection", socket => {
         console.log(`=> ${socket.name} left the room...`)
     })
 })
-
-// app.post('/api', (req, res) => {
-//     res.send(req.body);
-// })
-
-// app.use("*", (req, res) =>
-//     res.sendFile(path.join(__dirname, "/client/build/index.html"))
-// );
 
 const PORT = process.env.PORT || 3001;
 
