@@ -1,11 +1,11 @@
 const express = require("express");
-const http = require("http");
 const app = express();
 const path = require("path");
 
+const http = require("http");
 const server = http.createServer(app);
-const socket = require("socket.io");
 
+const socket = require("socket.io");
 const io = socket(server);
 
 var onlineUsers = {};
@@ -54,12 +54,13 @@ io.on("connection", socket => {
     })
 })
 
-app.get('/api', (req, res) => {
-    res.send('This is Api Routes!')
-})
-app.use("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "/client/build/index.html"))
-);
+// app.post('/api', (req, res) => {
+//     res.send(req.body);
+// })
+
+// app.use("*", (req, res) =>
+//     res.sendFile(path.join(__dirname, "/client/build/index.html"))
+// );
 
 const PORT = process.env.PORT || 3001;
 
