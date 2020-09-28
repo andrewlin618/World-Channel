@@ -8,17 +8,19 @@ const path = require("path");
 // const socket = require("socket.io");
 // const io = socket(server);
 
+
 // var onlineUsers = {};
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-app.get('/api', (req, res) => {
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
+
+app.get("/api", (req, res) => {
     res.send({ "hi": "hello" });
 })
 
