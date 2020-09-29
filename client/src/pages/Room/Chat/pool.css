@@ -12,12 +12,12 @@
 
   @keyframes flash {
     0% {
-      opacity: 20%;
+      opacity: 0.1;
     }
     50% {
-      opacity: 100%;
+      opacity: 1;
     }
     100% {
-      opacity: 20%;
+      opacity: 0.1;
     }
   }
