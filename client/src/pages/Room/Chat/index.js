@@ -10,8 +10,8 @@ import Sender from './Sender';
 // require('dotenv').config();
 import './chat.css'
 
-const socketURL = 'http://localhost:3001/';
-// const socketURL = '/';
+// const socketURL = 'http://localhost:3001/';
+const socketURL = '/';
 // const SOCKET_URI = process.env.REACT_APP_SERVER_URI;
 
 const Chat = () => {
