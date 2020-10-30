@@ -27,10 +27,10 @@
   },
   "homepage": "https://github.com/andrewlin618/react-express-socketio-chatroom#readme",
   "dependencies": {
-    "concurrently": "^5.2.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.4",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
   },
   "devDependencies": {}
 }

@@ -32,14 +32,26 @@ git clone https://github.com/andrewlin618/World-Channel.git
 cd World-Channel
 ```
 
-2. Install the dependencies:
-* express
-* concurrently
-* socket.io
-* nodemon
+2. Install the dependencies for Server:
+* "express": "^4.17.1",
+* "socket.io": "^2.3.0",
+* "concurrently": "^5.2.0",
+* "nodemon": "^2.0.4"
 ```
 npm install
 ```
+
+3. Install the dependencies for Client:
+* "react-dom": "^16.13.1",
+* "react-router-dom": "^5.2.0",
+* "react-scripts": "3.4.1",
+* "react-textarea-autosize": "^8.2.0",
+* "socket.io-client": "^2.3.0"
+
+```
+cd client && npm install
+```
+
 ### Usage
 1. Run the app with:
 ```
@@ -49,11 +61,11 @@ Open http://localhost:3001 to take a look around
 
 2. See how many users are online
 
-<img src="images/join.gif" height=300px alt="join / quit"></img>
+<img src="images/online.gif" height=200px alt="online"></img>
 
 3. Get notification when someone join or quit the chatroom
 
-<img src="images/online.gif" height=200px alt="online"></img>
+<img src="images/join.gif" height=300px alt="join / quit"></img>
 
 ## Contact
 - LinkedIn: [Andrew Lin](https://www.linkedin.com/in/andrewlin618)
