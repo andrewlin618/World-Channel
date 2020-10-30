@@ -1,11 +1,10 @@
 # World Channel
 Online chat-room that people from all over the world can chat anonymously.
 
+<img src="screenshot.gif" height=500px alt="Screenshot"></img>
+
 ## Table of Contents
 * [About The Project](#about-the-project)
-  * [How To Play](#how-to-play)
-  * [Ideas](#ideas)
-  * [Solution](*solution)
   * [Build With](#build-with)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
@@ -13,9 +12,6 @@ Online chat-room that people from all over the world can chat anonymously.
 * [Contact](#contact)
 
 ## About The Project
-<img src="screenshot.gif" height=500px alt="Screenshot"></img>
-
-A chat-room that everybody can chat anonymously.
 
 [Try it now!](https://worldchannel.herokuapp.com/)
 
@@ -32,7 +28,7 @@ A chat-room that everybody can chat anonymously.
 1. Clone the repo to local:
 ```
 git clone https://github.com/andrewlin618/World-Channel.git
-cd world-channel
+cd World-Channel
 ```
 
 2. Install the dependencies:
@@ -48,7 +44,12 @@ npm install
 ```
 npm start
 ```
-Open http://localhost:3001 to take a look around
+2. Open http://localhost:3001 to take a look around
+
+### Deploy to Heroku
+You can also deploy this app to Heroku:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Contact
 - LinkedIn: [Andrew Lin](https://www.linkedin.com/in/andrewlin618)
