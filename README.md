@@ -2,8 +2,7 @@
 Online chat-room that people from all over the world can chat anonymously.
 
 <img src="images/screenshot.gif" height=500px alt="Screenshot"></img>
-<br /><br /><br />
-
+<br /><br />
 
 ## Table of Contents
 * [About The Project](#about-the-project)
@@ -12,7 +11,7 @@ Online chat-room that people from all over the world can chat anonymously.
   * [Installation](#installation)
   * [Usage](#usage)
 * [Contact](#contact)
-<br /><br /><br />
+<br /><br />
 
 ## About The Project
 
@@ -23,7 +22,6 @@ Online chat-room that people from all over the world can chat anonymously.
 * Node.js
 * Express.js
 * Socket.io
-<br />
 
 ## Getting Started
 
@@ -64,11 +62,11 @@ Open http://localhost:3001 to take a look around
 
 2. See how many users are online
 
-<img src="images/online.gif" height=200px alt="online"></img>
+<img src="images/online.gif" height=220px alt="online"></img>
 
 3. Get notification when someone join or quit the chatroom
 
-<img src="images/join.gif" height=300px alt="join / quit"></img>
+<img src="images/join.gif" height=2px alt="join / quit"></img>
 
 <br />
 
