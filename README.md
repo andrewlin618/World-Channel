@@ -29,7 +29,7 @@ Online chat-room that people from all over the world can chat anonymously.
 1. Clone the repo to local:
 ```
 git clone https://github.com/andrewlin618/World-Channel.git
-cd world-channel
+cd World-Channel
 ```
 
 2. Install the dependencies:
@@ -48,9 +48,11 @@ npm start
 Open http://localhost:3001 to take a look around
 
 2. See how many users are online
-<img src="images/join.gif" height=200px alt="join / quit"></img>
+
+<img src="images/join.gif" height=300px alt="join / quit"></img>
 
 3. Get notification when someone join or quit the chatroom
+
 <img src="images/online.gif" height=200px alt="online"></img>
 
 ## Contact
