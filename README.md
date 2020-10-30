@@ -68,8 +68,6 @@ Open http://localhost:3001 to take a look around
 
 <img src="images/join.gif" height=2px alt="join / quit"></img>
 
-<br />
-
 ## Contact
 - LinkedIn: [Andrew Lin](https://www.linkedin.com/in/andrewlin618)
 - Email:    &nbsp; &nbsp; `andrewlin618@gmail.com`
