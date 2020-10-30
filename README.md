@@ -2,7 +2,7 @@
 Online chat-room that people from all over the world can chat anonymously.
 
 <img src="images/screenshot.gif" height=500px alt="Screenshot"></img>
-<br /><br /><br /><br /><br />
+<br /><br /><br />
 
 
 ## Table of Contents
@@ -12,7 +12,7 @@ Online chat-room that people from all over the world can chat anonymously.
   * [Installation](#installation)
   * [Usage](#usage)
 * [Contact](#contact)
-<br /><br /><br /><br /><br />
+<br /><br /><br />
 
 ## About The Project
 
@@ -23,8 +23,6 @@ Online chat-room that people from all over the world can chat anonymously.
 * Node.js
 * Express.js
 * Socket.io
-
-<br />
 
 ## Getting Started
 
