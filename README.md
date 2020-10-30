@@ -23,6 +23,7 @@ Online chat-room that people from all over the world can chat anonymously.
 * Node.js
 * Express.js
 * Socket.io
+<br />
 
 ## Getting Started
 
