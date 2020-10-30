@@ -60,13 +60,13 @@ npm start
 ```
 Open http://localhost:3001 to take a look around
 
-2. See how many users are online
+2. See how many users are online:
 
 <img src="images/online.gif" height=220px alt="online"></img>
 
-3. Get notification when someone join or quit the chatroom
+3. Get notification when someone join or quit the chatroom:
 
-<img src="images/join.gif" height=2px alt="join / quit"></img>
+<img src="images/join.gif" height=245px alt="quit"></img>
 
 ## Contact
 - LinkedIn: [Andrew Lin](https://www.linkedin.com/in/andrewlin618)
